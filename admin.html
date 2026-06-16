@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <header class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <div>
+                <a href="chat.html" class="btn btn-secondary">Back to Chat</a>
+                <button id="logoutBtn" class="btn btn-danger">Logout</button>
+            </div>
+        </header>
+
+        <div class="admin-grid">
+            <!-- Stats -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Total Users</h3>
+                    <p id="totalUsers" class="stat-number">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Messages</h3>
+                    <p id="totalMessages" class="stat-number">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Active Stories</h3>
+                    <p id="activeStories" class="stat-number">0</p>
+                </div>
+            </div>
+
+            <!-- Create User -->
+            <div class="panel">
+                <h2>Create New User</h2>
+                <form id="createUserForm">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="newUserEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Display Name</label>
+                        <input type="text" id="newUserName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="newUserPassword" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select id="newUserRole">
+                            <option value="member">Member</option>
+                            <option value="moderator">Moderator</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </form>
+                <div id="createUserMessage"></div>
+            </div>
+
+            <!-- Users List -->
+            <div class="panel">
+                <h2>Manage Users</h2>
+                <table id="usersTable" class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody"></tbody>
+                </table>
+            </div>
+
+            <!-- Archive -->
+            <div class="panel">
+                <h2>Archive Management</h2>
+                <p>Archive messages older than:</p>
+                <div class="form-group">
+                    <input type="number" id="archiveDays" value="60" min="1">
+                    <span>days</span>
+                </div>
+                <button id="triggerArchiveBtn" class="btn btn-warning">Run Archive</button>
+                <div id="archiveStatus"></div>
+
+                <h3>Archive History</h3>
+                <div id="archiveLog"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>
