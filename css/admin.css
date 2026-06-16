@@ -1,0 +1,118 @@
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.admin-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.panel {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.panel h2 {
+    margin-bottom: 20px;
+}
+
+/* Data Table */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+    background: var(--bg-lighter);
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.data-table tr:hover {
+    background: var(--bg-lighter);
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.role-admin {
+    background: var(--danger);
+    color: white;
+}
+
+.role-moderator {
+    background: var(--warning);
+    color: white;
+}
+
+.role-member {
+    background: var(--secondary);
+    color: white;
+}
+
+#archiveLog {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 15px;
+}
+
+.archive-entry {
+    padding: 10px;
+    background: var(--bg-lighter);
+    border-left: 3px solid var(--success);
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.archive-entry.failed {
+    border-left-color: var(--danger);
+}
