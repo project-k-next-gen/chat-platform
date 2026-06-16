@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Private Platform</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Chats</h3>
+                <div class="user-menu">
+                    <span id="currentUserName"></span>
+                    <button id="logoutBtn" class="btn-icon">🚪</button>
+                </div>
+            </div>
+
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="conversations">💬 Messages</button>
+                <button class="tab-btn" data-tab="stories">📸 Stories</button>
+                <button class="tab-btn admin-only" data-tab="admin" style="display:none;">⚙️ Admin</button>
+            </div>
+
+            <!-- Conversations List -->
+            <div id="conversationsList" class="conversations-list"></div>
+
+            <!-- New Chat Button -->
+            <button id="newChatBtn" class="btn btn-primary new-chat-btn">+ New Chat</button>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <div id="noChatSelected" class="no-chat">
+                <p>Select a conversation to start chatting</p>
+            </div>
+
+            <div id="chatContainer" class="chat-container" style="display:none;">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <div class="chat-info">
+                        <h3 id="chatTitle"></h3>
+                        <span id="chatStatus" class="status"></span>
+                    </div>
+                </div>
+
+                <!-- Messages Area -->
+                <div id="messagesArea" class="messages-area"></div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <button id="uploadImageBtn" class="btn-icon">📎</button>
+                    <input type="file" id="imageInput" accept="image/*" style="display:none;">
+                    <input type="text" id="messageInput" placeholder="Type a message...">
+                    <button id="sendBtn" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- New Chat Modal -->
+    <div id="newChatModal" class="modal">
+        <div class="modal-content">
+            <h3>Start New Chat</h3>
+            <div id="usersList" class="users-list"></div>
+            <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script type="module" src="js/chat.js"></script>
+</body>
+</html>
