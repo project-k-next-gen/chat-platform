@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Chat Platform</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-box">
+            <h1>🔒 Private Chat Platform</h1>
+            <p>A secure, members-only communication platform</p>
+            <a href="login.html" class="btn btn-primary">Enter</a>
+        </div>
+    </div>
+
+    <script type="module">
+        import { supabase } from './js/supabase-client.js';
+        
+        // Redirect if already logged in
+        supabase.auth.getSession().then(({ data: { session } }) => {
+            if (session) {
+                window.location.href = 'chat.html';
+            }
+        });
+    </script>
+</body>
+</html>
